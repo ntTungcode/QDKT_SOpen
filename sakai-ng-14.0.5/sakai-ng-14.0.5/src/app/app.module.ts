@@ -21,10 +21,14 @@ import {MultiSelectModule} from "primeng/multiselect";
 import {DropdownModule} from "primeng/dropdown";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {CalendarModule} from "primeng/calendar";
+import {ChipsModule} from "primeng/chips";
+import { ThamQuyenKhenComponent } from './demo/components/tham-quyen-khen/tham-quyen-khen.component';
+import { QLQdktComponent } from './demo/components/ql-qdkt/ql-qdkt.component';
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, QlqdktComponent
+        AppComponent, NotfoundComponent, QlqdktComponent, ThamQuyenKhenComponent, QLQdktComponent
     ],
     imports: [
         AppRoutingModule,
@@ -38,7 +42,9 @@ import {CalendarModule} from "primeng/calendar";
         MultiSelectModule,
         DropdownModule,
         SplitButtonModule,
-        CalendarModule
+        CalendarModule,
+        ChipsModule,
+        CheckboxModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

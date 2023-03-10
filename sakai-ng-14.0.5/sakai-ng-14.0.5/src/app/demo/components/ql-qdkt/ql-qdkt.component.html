@@ -1,0 +1,110 @@
+<div class="grid p-fluid">
+    <div class="col-12">
+        <p-breadcrumb [model]="items" [home]="home" styleClass="breadcrumb"></p-breadcrumb>
+    </div>
+</div>
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <div class="flex flex-wrap gap-2" style="justify-content: space-between;">
+                <h5 style="align-self: center;">Thêm mới đối tượng khen thưởng</h5>
+                <div class="fc-button">
+                    <button class="p-button-outlined p-button-info" icon="pi pi-search " pButton pRipple type="button"></button>
+                    <button icon="pi pi-plus" label="Thêm mới" pButton pRipple></button>
+                </div>
+            </div>
+            <p-table #dt1 [globalFilterFields]="['name','country.name','representative.name','status']" [loading]="loading" [paginator]="true" [rowHover]="true" [rows]="10"
+                     [value]="representatives" dataKey="id"
+                     responsiveLayout="scroll"
+                     styleClass="p-datatable-gridlines">
+                <ng-template pTemplate="header">
+                    <tr style="height: 1rem">
+                        <th style="width: 8rem" >
+                            <p-checkbox></p-checkbox>&nbsp;
+                                STT
+                        </th>
+                        <th style="min-width: 12rem" >
+                                Loại đối tượng
+                        </th>
+                        <th style="min-width: 12rem">
+                                Tên đối tượng
+                        </th>
+                        <th style="min-width: 12rem">
+                                Quê quán
+                        </th>
+                        <th style="min-width: 12rem">
+                                Chức vụ
+                        </th>
+                        <th style="min-width: 12rem">
+                                Đơn vị trình khen
+                        </th>
+                        <th style="min-width: 12rem">
+                                Hình thức khen thưởng
+                        </th>
+                        <th style="min-width: 12rem">
+                                Tác động
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template let-representative pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-checkbox></p-checkbox>&nbsp;
+                            {{representative.stt}}
+                        </td>
+                        <td>
+                            {{representative.ldt}}
+                        </td>
+                        <td>
+                            {{representative.tdt}}
+                        </td>
+                        <td>
+                            {{representative.qq}}
+                        </td>
+                        <td>
+                            {{representative.cv}}
+                        </td>
+                        <td>
+                            {{representative.dvtk}}
+                        </td>
+                        <td>
+                            {{representative.htkt}}
+                        </td>
+                        <td>
+                            <button class="p-element p-button-primary p-ripple p-button-rounded p-button-text p-button p-component p-button-icon-only" icon="pi pi-check" ng-reflect-icon="pi pi-check" pbutton=""
+                                    pripple=""
+                                    type="button"><span aria-hidden="true"
+                                                        class="p-button-icon pi pi-eye"></span><span
+                                aria-hidden="true" class="p-button-label">&nbsp;</span><span class="p-ink"></span>
+                            </button>
+                            <button class="p-element text-success p-ripple p-button-rounded p-button-text p-button p-button-success p-component p-button-icon-only" icon="pi pi-check" ng-reflect-icon="pi pi-check" pbutton=""
+                                    pripple=""
+                                    type="button"><span aria-hidden="true"
+                                                        class="p-button-icon pi pi-pencil"></span><span
+                                aria-hidden="true" class="p-button-label">&nbsp;</span><span class="p-ink"></span>
+                            </button>
+                            <button class="p-element p-ripple p-button-rounded p-button-text p-button p-button-danger p-component p-button-icon-only" icon="pi pi-check" ng-reflect-icon="pi pi-check" pbutton=""
+                                    pripple=""
+                                    type="button"><span aria-hidden="true"
+                                                        class="p-button-icon pi pi-trash"></span><span
+                                aria-hidden="true" class="p-button-label">&nbsp;</span><span class="p-ink"></span>
+                            </button>
+                        </td>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No customers found.</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="loadingbody">
+                    <tr>
+                        <td colspan="8">Loading customers data. Please wait.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+    </div>
+</div>

@@ -17,7 +17,9 @@ export class AppMenuComponent implements OnInit {
             {
                 label: '',
                 items: [
-                    { label: 'Quản lý quyết định khen thưởng', icon: 'pi pi-fw pi-file', routerLink: ['/demo/qlqdkt'] },
+                    { label: 'Quản lý quyết định khen thưởng', icon: 'pi pi-fw pi-file', routerLink: ['/ql-qdkt/ql-qdkt'] },
+                    { label: 'Thêm mới quyết định khen thưởng', icon: 'pi pi-fw pi-file', routerLink: ['/demo/qlqdkt'] },
+                    { label: 'Thẩm quyền khen', icon: 'pi pi-fw pi-file', routerLink: ['/thamquyenkhen/tham-quyen-khen'] },
                 ]
             },
             {

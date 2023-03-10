@@ -6,6 +6,7 @@
         <!--    </div>-->
     </div>
 </div>
+
 <div>
     <h2>Thêm mới quyết định khen thưởng</h2>
 </div>
@@ -115,109 +116,8 @@
 
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="emptymessage">
-                    <tr>
-                        <td colspan="8">No customers found.</td>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="loadingbody">
-                    <tr>
-                        <td colspan="8">Loading customers data. Please wait.</td>
-                    </tr>
-                </ng-template>
             </p-table>
         </div>
 
     </div>
 </div>
-<div class="grid">
-    <div class="col-12">
-        <div class="card p-fluid">
-            <h5>Thông tin chung</h5>
-            <div class="p-fluid p-formgrid grid">
-                <div class="field col-12 md:col-3">
-<!--                    <label htmlFor="sqd">Số quyết định *</label>-->
-<!--                    <input id="city" placeholder="Nhập số quyết định" type="text"/>-->
-                    <label htmlFor="sqd">Số quyết định *</label>
-                    <p-chips></p-chips>
-
-                </div>
-                <div class="field col-12 md:col-3">
-                    <label>Ngày tháng quyết định *</label>
-                    <p-calendar [(ngModel)]="value2" [showIcon]="true" inputId="calendar"></p-calendar>
-                </div>
-                <div class="field col-12 md:col-3">
-                    <label htmlFor="ntqd">Ký hiệu quyết định *</label>
-                    <p-chips></p-chips>
-<!--                    <input id="zip" pInputText placeholder="Nhập ký hiệu quyết định" type="text"/>-->
-                </div>
-                <div class="field col-12 md:col-3">
-                    <label htmlFor="state">Người ký *</label>
-                    <p-dropdown [(ngModel)]="selectedState" [options]="dropdownItems" optionLabel="name"
-                                placeholder="--Chọn người ký--"></p-dropdown>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="grid">
-    <div class="col-12">
-        <div class="card p-fluid">
-            <div class="flex flex-wrap gap-2" style="justify-content: space-between;">
-                <h5 style="align-self: center;">Danh sách file đính kèm</h5>
-                <div class="fc-button">
-                    <button icon="pi pi-cloud-upload" label="Upload file" pButton pRipple></button>
-                </div>
-            </div>
-            <p-table #dt1 [globalFilterFields]="['name','country.name','representative.name','status']" [loading]="loading" [rowHover]="true" [rows]="5"
-                     [value]="listfile" dataKey="id"
-                     responsiveLayout="scroll"
-                     styleClass="p-datatable-gridlines">
-                <ng-template pTemplate="header">
-                    <tr class="text-center">
-                        <th style="width: 8rem">
-                            <div class="flex justify-content-between align-items-center">
-                                STT
-                            </div>
-                        </th>
-                        <th style="min-width: 12rem">
-                            <div class="flex justify-content-between align-items-center">
-                                Tên file đính kèm
-                            </div>
-                        </th>
-                        <th style="width: 18rem">
-                            <div class="flex justify-content-between align-items-center">
-                                Tác động
-                            </div>
-                        </th>
-                    </tr>
-                </ng-template>
-                <ng-template let-listfile pTemplate="body">
-                    <tr>
-                        <td>
-                            {{listfile.stt}}
-                        </td>
-                        <td>
-                            {{listfile.tfdk}}
-                        </td>
-                        <td>
-                            <button class="p-element p-ripple p-button-rounded p-button-text p-button p-button-danger p-component p-button-icon-only" icon="pi pi-check" ng-reflect-icon="pi pi-check" pbutton=""
-                                    pripple=""
-                                    type="button"><span aria-hidden="true"
-                                                        class="p-button-icon pi pi-trash"></span><span
-                                aria-hidden="true" class="p-button-label">&nbsp;</span><span class="p-ink"></span>
-                            </button>
-                        </td>
-
-                    </tr>
-                </ng-template>
-            </p-table>
-    </div>
-</div>
-</div>
-<div class="flex flex-wrap gap-2" style="justify-content: flex-end;">
-    <button class="p-button-outlined" label="Hủy bỏ" pButton pRipple type="button"></button>
-    <!--    &nbsp;-->
-    <button label="Lưu lại" pButton pRipple></button>
-</div>
-
